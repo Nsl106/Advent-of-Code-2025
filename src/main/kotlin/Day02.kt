@@ -12,21 +12,26 @@ private fun main() {
         while (id <= li) {
             val idStr = id.toString()
 
+            // Part one
             if (idStr.length % 2 == 0) {
                 if (idStr.take(idStr.length / 2) == idStr.takeLast(idStr.length / 2)) {
                     p1 += id
                 }
             }
 
-            val idl = idStr.toList()
+            // Part two
+            val idChars = idStr.toList()
 
+            // For each digit in the first half of the id
             for (i in 1..(idStr.length / 2)) {
-                val idc = idStr.take(i).toList()
+                // Make sure it's a valid split
+                if (idStr.length % i != 0) continue
 
-                if (idStr.length % i != 0) {
-                    continue
-                }
-                if (idl.chunked(i).all { it == idc }) {
+                // Take the characters up to there
+                val idSegment = idStr.take(i).toList()
+
+                // Check each chunk against the initial segment
+                if (idChars.chunked(i).all { it == idSegment }) {
                     p2 += id
                     break
                 }
