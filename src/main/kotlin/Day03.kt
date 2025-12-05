@@ -27,10 +27,10 @@ private fun main() {
     for (ln in input) {
         var remainder = ln
 
-        for (i in 12 downTo 1) {
-            val num = remainder.dropLast(i - 1).max()
-            remainder = remainder.dropWhile { it != num }.drop(1)
-            p2 += num * 10.0.pow(i - 1).toLong()
+        for (i in 11 downTo 0) {
+            val num = remainder.dropLast(i).max()
+            remainder = remainder.drop(remainder.indexOf(num) + 1)
+            p2 += num * 10.0.pow(i).toLong()
         }
     }
 
