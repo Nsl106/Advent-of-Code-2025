@@ -72,12 +72,6 @@ object Util {
         return values.fold(values[0]) { acc, v -> lcm(acc, v) }
     }
 
-    fun Int.isEven() = this % 2 == 0
-    fun Int.isOdd() = this % 2 != 0
-
-    fun Long.isEven() = this % 2 == 0L
-    fun Long.isOdd() = this % 2 != 0L
-
     /** Returns the MD5 hash of a string. */
     @OptIn(ExperimentalStdlibApi::class) fun String.md5(): String {
         val md = MessageDigest.getInstance("MD5")
@@ -102,12 +96,6 @@ object Util {
 
     /** Returns the position in this grid. Equivalent to `list[a][b]` */
     operator fun <T> List<List<T>>.get(a: Int, b: Int) = this[a][b]
-
-    /** Returns the position in this grid or null if out of bounds. Equivalent to `list.getOrNull(a)?.getOrNull(b)` */
-    fun <T> List<List<T>>.getOrNull(a: Int, b: Int) = this.getOrNull(a)?.getOrNull(b)
-
-    /** Returns the position in this grid or null if out of bounds. Equivalent to `list.getOrNull(position.first)?.getOrNull(position.second)` */
-    fun <T> List<List<T>>.getOrNull(position: Pair<Int, Int>) = this.getOrNull(position.first)?.getOrNull(position.second)
 
     /** Returns all possible pairings of two items from the elements in this list. */
     fun <T> List<T>.allPossiblePairs(): List<Pair<T, T>> {
