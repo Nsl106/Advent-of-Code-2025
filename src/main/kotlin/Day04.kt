@@ -1,23 +1,9 @@
 import util.Util
 
 private fun main() {
-    val demoInput = """
-   ..@@.@@@@.
-   @@@.@.@.@@
-   @@@@@.@.@@
-   @.@@@@..@.
-   @@.@@@@.@@
-   .@@@@@@@.@
-   .@.@.@.@@@
-   @.@@@.@@@@
-   .@@@@@@@@.
-   @.@.@@@.@.
-    """.trimIndent().lines()
+    // Input to mutable char grid
+    val input = Util.loadInputLines(2025, 4).map { line -> line.toCharArray().toMutableList() }.toMutableList()
 
-    val input =
-        Util.loadInputLines(2025, 4)
-//        demoInput
-            .map { line -> line.toCharArray().toMutableList() }.toMutableList()
     var p1 = 0
     var p2 = 0
 

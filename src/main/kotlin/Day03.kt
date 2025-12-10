@@ -2,17 +2,7 @@ import util.Util
 import kotlin.math.pow
 
 private fun main() {
-    val demoInput = """
-    987654321111111
-    811111111111119
-    234234234234278
-    818181911112111
-    """.trimIndent().lines()
-
-    val input =
-        Util.loadInputLines(2025, 3)
-//        demoInput
-            .map { it -> it.map { it.digitToInt() } }
+    val input = Util.loadInputLines(2025, 3).map { it.map { it.digitToInt() } }
 
     var p1 = 0
     var p2 = 0L
